@@ -4,25 +4,27 @@ import PackageDescription
 let package = Package(
     name: "Sodium",
     platforms: [
+        .macOS(.v10_15),
         .iOS(.v11)
     ],
     products: [
         .library(name: "Sodium", targets: ["Sodium"])
     ],
     dependencies: [
-        .package(name: "Clibsodium", url: "https://github.com/0xacdc/XCFSodium.git", .upToNextMajor(from: "1.0.0")),
+        .package(name: "Clibsodium", url: "https://github.com/0xacdc/XCFSodium.git", .branch("test")),
     ],
     targets: [
         .target(
             name: "Sodium",
             dependencies: ["Clibsodium"],
-            path: "Sodium"
+            path: "Sodium",
+            exclude: ["Info.plist", "libsodium"]
         ),
         .testTarget(
             name: "SodiumTests",
             dependencies: ["Sodium"],
-            path: "Tests",
-            exclude: ["../Info.plist", "../Sodium/Info.plist", "../Sodium/libsodium"]
+            path: "Tests/SodiumTests",
+            exclude: ["Info.plist"]
         )
     ]
 )

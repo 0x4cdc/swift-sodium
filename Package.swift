@@ -21,8 +21,8 @@ let package = Package(
         .testTarget(
             name: "SodiumTests",
             dependencies: ["Sodium"],
-            path: "SodiumTests",
-            exclude: ["Info.plist", "Sodium/Info.plist", "Sodium/libsodium"]
+            path: "Tests",
+            exclude: ["../Info.plist", "../Sodium/Info.plist", "../Sodium/libsodium"]
         )
     ]
 )

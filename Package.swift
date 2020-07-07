@@ -16,7 +16,7 @@ let package = Package(
         .target(
             name: "Sodium",
             dependencies: ["Clibsodium"],
-            path: "Sources"
+            path: "Sodium"
         ),
         .testTarget(
             name: "SodiumTests",

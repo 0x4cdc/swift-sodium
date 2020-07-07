@@ -10,7 +10,7 @@ let package = Package(
         .library(name: "Sodium", targets: ["Sodium"])
     ],
     dependencies: [
-        .package(name: "Clibsodium", url: "https://github.com/0xacdc/XCFSodium.git", .upToNextMajor(from: "0.0.1")),
+        .package(name: "Clibsodium", url: "https://github.com/0xacdc/XCFSodium.git", .upToNextMajor(from: "1.0.0")),
     ],
     targets: [
         .target(

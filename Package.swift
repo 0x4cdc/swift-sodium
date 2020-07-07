@@ -20,5 +20,6 @@ let package = Package(
         .testTarget(
             name: "SodiumTests",
             dependencies: ["Sodium"]),
+            exclude: ["Info.plist"]
     ]
 )

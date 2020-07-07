@@ -22,7 +22,7 @@ let package = Package(
             name: "SodiumTests",
             dependencies: ["Sodium"],
             path: "SodiumTests",
-            exclude: ["Info.plist", "Sodium/Info.plist", "Sodium/libsodium/libsodium-ios.a", "Sodium/libsodium/libsodium-osx.a", "Sodium/libsodium/libsodium-watchos.a"]
+            exclude: ["Info.plist", "Sodium/Info.plist", "Sodium/libsodium"]
         )
     ]
 )

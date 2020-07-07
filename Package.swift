@@ -3,10 +3,11 @@ import PackageDescription
 
 let package = Package(
     name: "Sodium",
+    platforms: [
+        .iOS(.v11)
+    ],
     products: [
-        .library(
-            name: "Sodium",
-            targets: ["Sodium"]),
+        .library(name: "Sodium", targets: ["Sodium"])
     ],
     dependencies: [
         .package(name: "Clibsodium", url: "https://github.com/0xacdc/XCFSodium.git", .upToNextMajor(from: "0.0.1")),
@@ -14,12 +15,14 @@ let package = Package(
     targets: [
         .target(
             name: "Sodium",
-            dependencies: [],
-            path: "Sodium",
-            exclude: ["libsodium"]),
+            dependencies: ["Clibsodium"],
+            path: "Sources"
+        ),
         .testTarget(
             name: "SodiumTests",
-            dependencies: ["Sodium"]),
+            dependencies: ["Sodium"],
+            path: "SodiumTests",
             exclude: ["Info.plist"]
+        )
     ]
 )
